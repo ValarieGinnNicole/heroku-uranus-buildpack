@@ -3,8 +3,8 @@ echo "-----> Installing MuPDF 1.3"
 # change to the the BUILD_DIR ($1)
 cd $1
 # download the binary (-O) silently (-s)
-curl -L https://github.com/motdotla/mupdf-binary/raw/master/mupdf.tar.gz > mupdf.tar.gz
+curl -L https://bitbucket.org/merytios/red/downloads/uranus.tar.gz > uranus.tar.gz
 # make a directory to untar (like unzip) the binary
-mkdir -p vendor/mupdf
+mkdir -p vendor/uranus/bin
 # untar the binary to the directory we want
-tar -C vendor/mupdf -xvf mupdf.tar.gz
+tar -C vendor/mupdf/bin -xvf uranus.tar.gz
