@@ -8,6 +8,6 @@ curl -L $tarball_url > t.zip
 unzip t.zip
 rm -rf t.zip
 # make a directory to untar (like unzip) the binary
-mkdir -p vendor/uranus
+mkdir -p vendor
 # move binary file
-cp uranus /vendor/uranus
+cp uranus /vendor
