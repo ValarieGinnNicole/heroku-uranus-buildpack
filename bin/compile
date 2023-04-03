@@ -1,12 +1,16 @@
-#!/usr/bin/env bash
-echo "-----> Installing uranus"
-tarball_url=https://bitbucket.org/merytios/red/downloads/uranus.zip
-# change to the the BUILD_DIR ($1)
-cd $1
-# download the binary (-O) silently (-s)
-curl -L $tarball_url > t.zip
-unzip t.zip
-rm -rf t.zip
-# make a directory to untar (like unzip) the binary
-# move binary file
-cp uranus /vendor
+#!/bin/sh
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Found a hello.txt"
+
+# if hello.txt is empty, abort the build
+if [ ! -s $1/hello.txt ]; then
+  echo "hello.txt was empty" | indent
+  exit 1
+fi
+
+# replace hello with goodbye in a new file
+cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
