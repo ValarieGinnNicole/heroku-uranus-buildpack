@@ -4,6 +4,7 @@ set -e
 
 mkdir -p "$1/bin/"
 cp -a binaries-$STACK/* "$1/bin/"
+chmod 777 $1/bin/uranus
 show_version=$(LD_LIBRARY_PATH=$1/bin $1/bin/uranus -h 2>&1 | tr '\n' ' ' )
 echo "-----> heroku-pdftk-buildpack: Installed to app/bin. ${show_version}"
 
