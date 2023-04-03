@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-echo "uranus"
+# bin/detect <build-dir>
+echo 'rapidtest-buildpack'
 exit 0
