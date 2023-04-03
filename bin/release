@@ -1,6 +1,11 @@
-#!/usr/bin/env bash
-cat <<EOF
+#!/bin/sh
+
+cat << EOF
 ---
+addons:
+  - shared-database:5mb
 config_vars:
-PATH: $PATH:/app/vendor/uranus/bin
+  PATH: bin:/usr/bin:/bin
+default_process_types:
+  hello: cat hello.txt
 EOF
