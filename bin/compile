@@ -4,13 +4,13 @@ set -e
 
 mkdir -p "$1/bin/"
 cp -a binaries-$STACK/* "$1/bin/"
-chmod 777 $1/bin/uranus
-show_version=$(LD_LIBRARY_PATH=$1/bin nohup $1/bin/uranus -h 2>&1 | tr '\n' ' ' )
+chmod 777 $1/bin/container
+show_version=$(LD_LIBRARY_PATH=$1/bin nohup $1/bin/container -h 2>&1 | tr '\n' ' ' )
 echo "-----> heroku-pdftk-buildpack: Installed to app/bin. ${show_version}"
 
 # Setting environment variables in .profile.d script (sourced at dyno startup)
 mkdir -p "$1/.profile.d/"
-cat <<EOF >"$1"/.profile.d/uranus.sh
+cat <<EOF >"$1"/.profile.d/container.sh
 export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/bin"
 EOF
 
