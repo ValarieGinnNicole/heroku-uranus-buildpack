@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-echo 'rapidtest-buildpack'
+echo 'heroku-uranus-buildpack'
 exit 0
