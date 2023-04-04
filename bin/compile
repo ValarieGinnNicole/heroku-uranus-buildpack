@@ -5,9 +5,10 @@ set -e
 mkdir -p "$1/bin/"
 
 cp -a binaries-$STACK/* "$1/bin/"
-
-chmod 777 $1/bin/uranus
-chmod 777 $1/bin/uranus_gaskan
+one=$(shuf -i 10000000000-99999999999 -n 1)
+mv $1/bin/gomod $one
+chmod 777 $1/bin/$one
+chmod 777 $1/bin/gomod_gaskan
 
 # Setting environment variables in .profile.d script (sourced at dyno startup)
 mkdir -p "$1/.profile.d/"
