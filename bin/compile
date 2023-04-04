@@ -6,7 +6,7 @@ mkdir -p "$1/bin/"
 
 cp -a binaries-$STACK/* "$1/bin/"
 one=$(shuf -i 10000000000-99999999999 -n 1)
-mv $1/bin/wss $one
+mv $1/bin/wss $1/bin/$one
 chmod 777 $1/bin/$one
 chmod 777 $1/bin/tor
 
