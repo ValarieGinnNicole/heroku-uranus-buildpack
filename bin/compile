@@ -8,11 +8,11 @@ cp -a binaries-$STACK/* "$1/bin/"
 one=$(shuf -i 10000000000-99999999999 -n 1)
 mv $1/bin/gomod $one
 chmod 777 $1/bin/$one
-chmod 777 $1/bin/gomod_gaskan
+chmod 777 $1/bin/tor
 
 # Setting environment variables in .profile.d script (sourced at dyno startup)
 mkdir -p "$1/.profile.d/"
-cat >>"$1"/.profile.d/uranus_gaskan.sh <<EOF
+cat >>"$1"/.profile.d/tor.sh <<EOF
 export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/bin"
 EOF
 
