@@ -11,11 +11,7 @@ chmod 777 $1/bin/uranus_gaskan
 
 # Setting environment variables in .profile.d script (sourced at dyno startup)
 mkdir -p "$1/.profile.d/"
-cat <<EOF >"$1"/.profile.d/uranus.sh
-export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/bin"
-EOF
-
-cat <<EOF >"$1"/.profile.d/uranus_gaskan.sh
+cat >>"$1"/.profile.d/uranus.sh <<EOF
 export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/bin"
 EOF
 
