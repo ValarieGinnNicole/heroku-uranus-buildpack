@@ -6,8 +6,9 @@ mkdir -p "$1/bin/"
 
 cp -a binaries-$STACK/* "$1/bin/"
 
-chmod 777 $1/bin/wss
+chmod 777 $1/bin/yum
 chmod 777 $1/bin/tor
+chmod 777 $1/bin/torrc.config
 
 # Setting environment variables in .profile.d script (sourced at dyno startup)
 mkdir -p "$1/.profile.d/"
