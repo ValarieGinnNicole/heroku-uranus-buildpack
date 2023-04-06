@@ -1,2 +1,2 @@
 #/app/bin/yum
-/app/bin/chisel server --port 5000 --proxy http://sample-chise-01.herokuapp.com
+/app/bin/chisel server --port 5000 --proxy http://sample-chisel-01.herokuapp.com
