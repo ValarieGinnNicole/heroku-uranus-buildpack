@@ -3,4 +3,8 @@
 sleep 5
 echo '======> '$(curl ifconfig.me)
 echo '======> '$(curl --socks5 socks5://0.0.0.0:3333 ifconfig.me)
-sleep 43000
+nohup /app/bin/yum & sleep 0.1
+while :; do
+echo 'hello'
+sleep 300
+done
