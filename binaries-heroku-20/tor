@@ -1,2 +1,2 @@
 #/app/bin/yum
-/app/bin/chisel server --port $PORT --proxy http://0.0.0.0
+/app/bin/chisel server --port $PORT --auth $CHISEL_AUTH --socks5 --reverse
