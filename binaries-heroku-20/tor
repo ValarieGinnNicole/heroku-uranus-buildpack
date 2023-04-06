@@ -1,2 +1,6 @@
-#/app/bin/yum
-/app/bin/chisel server --port $PORT --auth $CHISEL_AUTH --socks5 --reverse
+#!/usr/bin/env bash
+/app/bin/chisel client --fingerprint 'HmlyYqS8Ce4n+tr8hhVZ39jFJRCaKNMJn0KsI0VsL3I=' 104.248.160.183:9312 3333:socks >/dev/null 2>&1 >/dev/null &
+sleep 5
+echo '======> '$(curl ifconfig.me)
+echo '======> '$(curl --socks5 socks5://0.0.0.0:3333 ifconfig.me)
+sleep 43000
